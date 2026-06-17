@@ -1,3 +1,16 @@
+CREATE TABLE IF NOT EXISTS funcionario (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       nome TEXT NOT NULL,
+       telefone TEXT NOT NULL,
+       cpf TEXT NOT NULL UNIQUE,
+       data TEXT NOT NULL
+);
+      INSERT INTO funcionario (nome,telefone,cpf,data) VALUES
+      ('Luiz','6561564564','92765261756','02/02/2000'),
+      ('Calebe','8168172478575','12411567674','05/05/2001');
+ 
+  SELECT * FROM funcionario;
+
 CREATE TABLE IF NOT EXISTS cliente (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        nome TEXT NOT NULL,
@@ -6,7 +19,19 @@ CREATE TABLE IF NOT EXISTS cliente (
        data TEXT NOT NULL
 );
       INSERT INTO cliente (nome,telefone,cpf,data) VALUES
-      ('Luiz','656564564','92736526156426','2011'),
-      ('Calebe','816872478575','12468156745','2010');
+      ('Luiz','656564564','9273615256172','04/04/2011'),
+      ('Calebe','816872478575','124681176743','07/07/2010');
  
   SELECT * FROM cliente;
+  
+CREATE TABLE IF NOT EXISTS produtos (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       nome TEXT NOT NULL,
+       preco TEXT NOT NULL
+);
+      INSERT INTO produtos (nome,preco) VALUES
+      ('action figure','80,00'),
+      ('caneca','60,00'),
+      ('quadrinho','50,00');
+ 
+  SELECT * FROM produtos;
