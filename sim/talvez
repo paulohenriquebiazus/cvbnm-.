@@ -6,10 +6,23 @@ CREATE TABLE IF NOT EXISTS funcionario (
        data TEXT NOT NULL
 );
       INSERT INTO funcionario (nome,telefone,cpf,data) VALUES
-      ('Luiz','6561564564','92765261756','02/02/2000'),
-      ('Calebe','8168172478575','12411567674','05/05/2001');
+      ('Gohan','6561564564','927557261756','02/02/2000'),
+      ('Goten','8168172478','124116775674','05/05/2006');
  
   SELECT * FROM funcionario;
+  
+CREATE TABLE IF NOT EXISTS fornecedor (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       nome TEXT NOT NULL,
+       telefone TEXT NOT NULL,
+       produto TEXT NOT NULL,
+       preco TEXT NOT NULL
+);
+      INSERT INTO fornecedor (nome,telefone,produto,preco) VALUES
+      ('Chon','6561564564','ettyyrt','18,00'),
+      ('Dion','8168172478','eehvsrd','18,00');
+ 
+  SELECT * FROM fornecedor;
 
 CREATE TABLE IF NOT EXISTS cliente (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,19 +32,47 @@ CREATE TABLE IF NOT EXISTS cliente (
        data TEXT NOT NULL
 );
       INSERT INTO cliente (nome,telefone,cpf,data) VALUES
-      ('Luiz','656564564','9273615256172','04/04/2011'),
-      ('Calebe','816872478575','124681176743','07/07/2010');
- 
+      ('Luiz','656564564','92731526561772','04/04/2011'),
+      ('Calebe','816872478575','1246681176743','07/07/2010');
+
   SELECT * FROM cliente;
   
 CREATE TABLE IF NOT EXISTS produtos (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        nome TEXT NOT NULL,
-       preco TEXT NOT NULL
+       preco TEXT NOT NULL,
+       estoque TEXT NOT NULL
 );
-      INSERT INTO produtos (nome,preco) VALUES
-      ('action figure','80,00'),
-      ('caneca','60,00'),
-      ('quadrinho','50,00');
+      INSERT INTO produtos (nome,preco,estoque) VALUES
+      ('action figure','80,00','12'),
+      ('caneca','60,00','4'),
+      ('quadrinho','50,00','2');
  
   SELECT * FROM produtos;
+  
+CREATE TABLE IF NOT EXISTS pedido (
+       cliente TEXT NOT NULL,
+       cliente_id TEXT NOT NULL,
+       total TEXT NOT NULL
+  
+);
+      INSERT INTO pedido (cliente,cliente_id,total) VALUES
+      ('Luiz','1','96,00'),
+      ('Calebe','2','120,00'),
+      ('Jean','3','42,67');
+ 
+  SELECT * FROM pedido;
+  
+CREATE TABLE IF NOT EXISTS itens_pedido (
+       pedido_id TEXT NOT NULL,
+       produto_id TEXT NOT NULL,
+       quantidade TEXT NOT NULL,
+       preco_unitario TEXT NOT NULL
+  
+);
+      INSERT INTO itens_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALUES 
+      (101, 1, 1, 4200.00),
+      (101, 2, 1, 120.50),
+      (101, 5, 1, 120.50);
+
+  SELECT * FROM pedido;
