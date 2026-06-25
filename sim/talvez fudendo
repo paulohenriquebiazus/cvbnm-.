@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS funcionario (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       nome TEXT NOT NULL,
+       telefone TEXT NOT NULL,
+       cpf TEXT NOT NULL UNIQUE,
+       data TEXT NOT NULL
+);
+      INSERT INTO funcionario (nome,telefone,cpf,data) VALUES
+      ('Gohan','6561564564','927545726176','02/02/2000'),
+      ('Goten','8168172478','124116745674','05/05/2006');
+ 
+  SELECT * FROM funcionario;

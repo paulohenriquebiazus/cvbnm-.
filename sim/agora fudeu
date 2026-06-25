@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS fornecedor (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       nome TEXT NOT NULL,
+       telefone TEXT NOT NULL,
+       produto TEXT NOT NULL,
+       preco TEXT NOT NULL
+);
+      INSERT INTO fornecedor (nome,telefone,produto,preco) VALUES
+      ('Chon','6561564564','ettyyrt','18,00'),
+      ('Dion','8168172478','eehvsrd','18,00');
+ 
+  SELECT * FROM fornecedor;

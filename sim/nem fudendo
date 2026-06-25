@@ -1,0 +1,7 @@
+SELECT 
+    prod.nome AS produto,
+    SUM(ip.quantidade) AS total_unidades_vendidas
+FROM itens_pedido ip
+INNER JOIN produtos prod ON ip.produto_id = prod.id
+GROUP BY prod.id
+ORDER BY total_unidades_vendidas DESC;
